@@ -1,0 +1,51 @@
+<div class="login-container">
+  <img src="../../assets/film.png" alt="film" class="film" />
+  <div class="logo">watch movies</div>
+  <div class="description">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
+    temporibus itaque expedita explicabo eos nostrum qui? Consequatur labore
+    quibusdam doloremque. Iusto dolores fuga beatae officia! Minus repudiandae
+    eveniet qui. Officia mollitia, nemo eaque nostrum numquam incidunt non
+    consectetur deleniti repellendus qui, iure maiores hic vitae. Non esse
+  </div>
+  <div class="login-form">
+    <div class="form-group">
+      <label for="uname"> Username</label>
+      <input
+        type="text"
+        name="uname"
+        id=""
+        class="form-control"
+        [(ngModel)]="username"
+        (keydown.enter)="logIn($event)"
+      />
+    </div>
+    <div class="form-group">
+      <label for="pword"> Password</label>
+      <input
+        type="password"
+        name="pword "
+        id=""
+        class="form-control"
+        [(ngModel)]="password"
+        (keydown.enter)="logIn($event)"
+      />
+    </div>
+    <div class="btn-container">
+      <div class="error">
+        {{ errMessage }}
+      </div>
+
+      <button
+        class="btn btn-dark"
+        id="myBtn"
+        [(ngModel)]="eve"
+        (keydown.enter)="logIn($event)"
+        (click)="logIn($event)"
+      >
+        login
+      </button>
+      {{ eve }}
+    </div>
+  </div>
+</div>

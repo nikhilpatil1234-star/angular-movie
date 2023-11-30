@@ -1,0 +1,8 @@
+<app-header></app-header>
+<h2>data from json which is displayed only the data is resolved</h2>
+<div class="data-container" style="display: flex; flex-wrap: wrap">
+  <div *ngFor="let x of images" style="margin: 10px">
+    <img [src]="x.url" width="200px" height="200px" />
+    <h3>{{ x.title | slice : 0 : 10 }}</h3>
+  </div>
+</div>

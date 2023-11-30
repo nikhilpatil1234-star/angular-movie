@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="logo">Contact us</div>
+<div
+  class="login-container"
+  style="
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  "
+>
+  <div class="login-form">
+    <div class="form-group">
+      <label for="fname"> First Name</label>
+      <input
+        type="text"
+        name="firstName"
+        id="fname"
+        class="form-control"
+        placeholder="your name"
+        [(ngModel)]="firstname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lname"> Last Name</label>
+      <input
+        type="text"
+        name="lastName"
+        id="lname"
+        class="form-control"
+        placeholder="your lastname"
+        [(ngModel)]="lastname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select
+        name="country"
+        id="country"
+        class="form-select"
+        [(ngModel)]="country"
+        aria-label="Default select example"
+      >
+        <option selected>India</option>
+        <option value="australia">Australia</option>
+        <option value="russia">russia</option>
+        <option value="brazil">brazil</option>
+      </select>
+    </div>
+
+    <div class="btn-container">
+      <label for="submit"> Subject</label>
+    </div>
+    <textarea
+      name="subject"
+      id="subject"
+      [(ngModel)]="subject"
+      placeholder="write"
+    ></textarea>
+    <input type="submit" value="submit" (click)="onSubmit()" />
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="header-container">
+  <div class="logo" (click)="goToHome()">
+    <h1>M</h1>
+  </div>
+  <div class="contact">
+    <button class="btn btn-dark" routerLink="/contact">Contact</button>
+  </div>
+  <div class="resovle">
+    <button class="btn btn-dark" routerLink="/resolve" (click)="gotoResolve()">
+      Resolve
+    </button>
+  </div>
+  <div class="btn-container">
+    <button (click)="logout()" class="btn btn-dark">Logout</button>
+  </div>
+</div>

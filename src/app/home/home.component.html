@@ -1,0 +1,76 @@
+<app-header></app-header>
+<div class="home-container">
+  <div class="all-movies">
+    <div class="trending-movies" style="min-height: 350px">
+      <div class="top">
+        <button class="btn btn-dark" (click)="FetchDataToDisplay()">
+          Fetch data
+        </button>
+        <h3>Trending movies</h3>
+        <input
+          style="width: 50%"
+          class="form-control"
+          type="search"
+          name="search"
+          placeholder="search"
+          [(ngModel)]="firstName"
+          (ngModelChange)="Search()"
+        />
+        <div class="view-all">view-all</div>
+      </div>
+      <div class="movies-thumbnail" *ngIf="trendingMovie?.length; else block">
+        <div class="movies" *ngFor="let x of trendingMovie">
+          <div class="cover" (click)="goToMovie('trending', x.id)">
+            <img [src]="x.cover" alt="imha" srcset="" />
+          </div>
+          <div class="details">
+            <div class="name">{{ x.name }}</div>
+            <div class="rating">
+              <span class="rating-name"> {{ x.rating }}</span>
+              <app-star-rating [rating]="x.rating" [isReadOnly]="true">
+              </app-star-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #block>
+      <h1>no search results</h1>
+    </ng-template>
+    <div class="popular-movies">
+      <div class="top">
+        <h3>Popular movies</h3>
+        <div class="view-all">view-all</div>
+      </div>
+      <div class="movies-thumbnail">
+        <div class="movies" *ngFor="let x of allTime">
+          <div class="cover" (click)="goToMovie('popular', x.id)">
+            <img [src]="x.cover" alt="imha" srcset="" />
+          </div>
+          <div class="details">
+            <div class="name">{{ x.name }}</div>
+            <div class="rating">
+              <span class="rating-name"> {{ x.rating }}</span>
+              <app-star-rating [rating]="x.rating" [isReadOnly]="true">
+              </app-star-rating>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="All-popular-movies">
+    <h3>All time popular</h3>
+    <div class="details" *ngFor="let x of popularMovies">
+      <img [src]="x.cover" alt="" srcset="" />
+      <div class="name">
+        {{ x.name }}
+      </div>
+      <div class="rating">
+        <app-star-rating [rating]="x.rating" [isReadOnly]="false">
+        </app-star-rating>
+        <!-- <span class="ratingN"> {{ x.rating }}</span> -->
+      </div>
+    </div>
+  </div>
+</div>

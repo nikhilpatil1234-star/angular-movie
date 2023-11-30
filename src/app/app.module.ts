@@ -3,16 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { MoviesComponent } from './movies/movies.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FeatureModule } from './feature/feature.module';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ContactComponent } from './contact/contact.component';
+import { canDeactivateGraurdService } from './canDeactiveGraud.service';
+import { ResovleRouterComponent } from './resovle-router/resovle-router.component';
+import { resolveService } from './fetch-resolve-service';
+import { TestfileComponent } from './testfile/testfile.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    HeaderComponent,
+    MoviesComponent,
+    ContactComponent,
+    ResovleRouterComponent,
+    TestfileComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FeatureModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [canDeactivateGraurdService, resolveService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
